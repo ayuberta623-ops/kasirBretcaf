@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BrettCaf - Coffee & Chill</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <h1>BrettCaf</h1>
+    <p><i>"CAFE IN DULU BARU KAMU"</i></p>
+</header>
+
+<nav>
+    Profil | Menu | Kasir
+</nav>
+
+<div class="container">
+    <section class="profile">
+        <h2>Tentang BrettCaf</h2>
+        <p>Terletak di <strong>sengkaling Jalan Tapak Liman 05</strong>, BrettCaf menyajikan biji kopi pilihan dengan teknik roasting terbaik untuk menemani hari Anda.</p>
+    </section>
+
+    <hr>
+
+    <h3>Menu :</h3>
+    <div class="menu-grid">
+        <div class="menu-item">
+            <h4>Espresso</h4>
+            <p>Rp 15.000</p>
+            <button class="btn-add" onclick="addToCart('Espresso', 15000)">Tambah</button>
+        </div>
+        <div class="menu-item">
+            <h4>Cappuccino</h4>
+            <p>Rp 25.000</p>
+            <button class="btn-add" onclick="addToCart('Cappuccino', 25000)">Tambah</button>
+        </div>
+        <div class="menu-item">
+            <h4>Latte Gula Aren</h4>
+            <p>Rp 22.000</p>
+            <button class="btn-add" onclick="addToCart('Latte Gula Aren', 22000)">Tambah</button>
+        </div>
+        <div class="menu-item">
+            <h4>Matcha</h4>
+            <p>Rp 18.000</p>
+            <button class="btn-add" onclick="addToCart('Croissant', 18000)">Tambah</button>
+        </div>
+    </div>
+
+    <div class="order-section">
+        <h3>Keranjang Pesanan</h3>
+        <div id="cart-list">Belum ada pesanan.</div>
+        <p class="total-text">Total: Rp <span id="cart-total">0</span></p>
+
+        <div class="input-group">
+            <label>Nama Pembeli:</label>
+            <input type="text" id="customerName" placeholder="Masukkan nama Anda">
+        </div>
+
+        <div class="input-group">
+            <label>Metode Pembayaran:</label>
+            <select id="payMethod" onchange="toggleCashInput()">
+                <option value="Cash">Cash (Tunai)</option>
+                <option value="QRIS">QRIS</option>
+                <option value="Transfer">Transfer Bank</option>
+            </select>
+        </div>
+
+        <div id="cash-input-div" class="input-group">
+            <label>Uang Dibayar (Rp):</label>
+            <input type="number" id="cashAmount" placeholder="Contoh: 50000">
+        </div>
+
+        <button class="btn-process" onclick="processPayment()">Proses Pembayaran & Cetak Struk</button>
+    </div>
+
+    <div id="receipt">
+        <div class="receipt-header">
+            <h3>BRETTCAF</h3>
+            <p> sengkaling Jalan Tapak Liman 05</p>
+            <p id="r-time"></p>
+        </div>
+        <div class="receipt-body">
+            <p>Pelanggan: <span id="r-name"></span></p>
+            <div id="r-items"></div>
+        </div>
+        <div class="receipt-footer">
+            <p>Total: Rp <span id="r-total"></span></p>
+            <p>Metode: <span id="r-method"></span></p>
+            <p id="r-pay-row">Bayar: Rp <span id="r-cash"></span></p>
+            <p id="r-change-row">Kembali: Rp <span id="r-change"></span></p>
+        </div>
+        <p style="text-align:center; font-size: 0.8rem; margin-top: 15px;">HDFGSGGSFTYSDGCHJDKBCSDFSHVC</p>
+        <button class="btn-print" onclick="window.print()">Cetak PDF</button>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

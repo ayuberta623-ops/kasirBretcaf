@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>POS Brettcaf</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body class="pos">
+
+<!-- MENU -->
+<div class="pos-left">
+<h2>Menu</h2>
+
+<div id="menuList"></div>
+</div>
+
+<!-- TRANSAKSI -->
+<div class="pos-right">
+
+<h2>Transaksi</h2>
+
+<input type="text" id="nama" placeholder="Nama Pembeli">
+
+<div id="cart"></div>
+
+<p>Total: Rp <span id="total">0</span></p>
+
+<select id="metode">
+<option>Cash</option>
+<option>QRIS</option>
+<option>Transfer</option>
+</select>
+
+<input type="number" id="uang" placeholder="Uang Bayar (Cash)">
+
+<button onclick="checkout()">Bayar</button>
+
+<h3>Struk</h3>
+<pre id="struk"></pre>
+
+<h3>Laporan</h3>
+<div id="laporan"></div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

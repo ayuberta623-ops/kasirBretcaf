@@ -1,0 +1,121 @@
+:root {
+    --primary: #4e342e;
+    --secondary: #d7ccc8;
+    --accent: #ffab40;
+    --bg: #f5f5f5;
+}
+
+body { 
+    font-family: 'Segoe UI', sans-serif; 
+    margin: 0; 
+    background: var(--bg); 
+    color: #333; 
+    line-height: 1.6;
+}
+
+header { 
+    background: var(--primary); 
+    color: white; 
+    padding: 2rem; 
+    text-align: center; 
+}
+
+nav { 
+    background: #3e2723; 
+    color: white; 
+    padding: 10px; 
+    text-align: center; 
+    position: sticky; 
+    top: 0; 
+    z-index: 100; 
+}
+
+.container { 
+    max-width: 800px; 
+    margin: 20px auto; 
+    padding: 25px; 
+    background: white; 
+    border-radius: 12px; 
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1); 
+}
+
+.menu-grid { 
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); 
+    gap: 15px; 
+    margin: 20px 0; 
+}
+
+.menu-item { 
+    border: 1px solid #eee; 
+    padding: 15px; 
+    border-radius: 10px; 
+    text-align: center; 
+    transition: transform 0.2s;
+}
+
+.menu-item:hover { 
+    transform: translateY(-5px);
+    border-color: var(--accent);
+}
+
+.btn-add { 
+    background: var(--primary); 
+    color: white; 
+    border: none; 
+    padding: 8px 15px; 
+    cursor: pointer; 
+    border-radius: 5px; 
+}
+
+.order-section { 
+    margin-top: 40px; 
+    padding: 20px; 
+    background: #fafafa; 
+    border-radius: 10px;
+}
+
+.total-text { font-size: 1.2rem; font-weight: bold; color: #2e7d32; }
+
+.input-group { margin-bottom: 15px; }
+
+input, select { 
+    padding: 10px; 
+    width: 100%; 
+    border: 1px solid #ccc; 
+    border-radius: 5px; 
+    margin-top: 5px; 
+}
+
+.btn-process { 
+    background: #2e7d32; 
+    color: white; 
+    border: none; 
+    padding: 15px; 
+    width: 100%; 
+    font-size: 1rem; 
+    cursor: pointer; 
+    border-radius: 5px; 
+    font-weight: bold;
+}
+
+#receipt { 
+    display: none; 
+    background: #fff; 
+    padding: 30px; 
+    border: 2px dashed #444; 
+    font-family: 'Courier New', monospace; 
+    max-width: 350px; 
+    margin: 30px auto;
+}
+
+.receipt-header { text-align: center; border-bottom: 1px dashed #333; margin-bottom: 10px; }
+.receipt-footer { border-top: 1px dashed #333; margin-top: 10px; padding-top: 10px; }
+.hidden { display: none; }
+
+@media print { 
+    body * { visibility: hidden; } 
+    #receipt, #receipt * { visibility: visible; } 
+    #receipt { position: absolute; left: 0; top: 0; border: none; }
+    .btn-print { display: none; }
+}
